@@ -1,16 +1,6 @@
 # BEEZNESSLY
 ![Beeznessly](https://i.postimg.cc/VNbWDnn2/Capture-d-e-cran-2021-01-28-a-11-41-17.png)
 
-_Tables of content_
-1. About The Project
-  - Built With
-2. Getting Started
-  - Prerequisites
-  - Install
-3. Usage
-4. Acknowledgements
-5. Authors
-
 # About The Project
 
 This project is in partnership with the company Beeznessly. Beeznessly has for goal to connect entrepreneurs with digital experts and facilitate the download of ebooks.
@@ -42,14 +32,14 @@ This is an example of how you may give instructions on setting up your project l
 ## Install
 
 1. Clone this project
-2. Run >composer install
-3. Run >yarn install
-4. Run >yarn encore dev< to build assets
-5. Connect the database in the env.local
-6. Run >php bin/console d:d:c
-7. Run >php bin/console make:migration
-8. Run >bin/console doctrine:migrations:migrate
-9. You can load fixtures if needed
+2. Run ```composer install```
+3. Connect the database in the env.local
+4. Run ```php bin/console d:d:c```
+5. Run ```php bin/console make:migration```
+6. Run ```bin/console doctrine:migrations:migrate```
+7. Run ```yarn install```
+8. Run ```yarn encore dev``` to build assets
+9. You can load fixtures if needed by running ```php bin/console doctrine:fixtures:load```
 
 # Usage
 
@@ -57,10 +47,10 @@ This is an example of how you may give instructions on setting up your project l
 1. Register
 2. Login
 3. Ask for a new password
-4. Upload a logo , profil picture and banner for their expert page
-5. Create, Edit and Upload their ebooks
-6. See who downloads their ebooks and how much
-7. See who send a message
+4. Upload a logo , profil picture and banner for your public expert page
+5. Create, Edit and Upload ebooks
+6. See who downloads your ebooks and how many downloads you had foreach ebook
+7. Access to messages send from entrepeneurs from your public expert page
 
   As a entrepreneur you can:
 1. Register
@@ -68,15 +58,15 @@ This is an example of how you may give instructions on setting up your project l
 3. Ask for a new password
 4. Upload a profil picture
 5. Download ebooks
-6. See their ebooks download
-7. Send message to expert
+6. See the ebooks you dowloaded
+7. Send a message to an expert
 
   As an admin you can (easyadmin):
-1. Validate an account expert
-2. Validate an ebook
+1. Moderate an account expert
+2. Moderate an ebook
 3. Create, modify and delete expertise
-4. Create, modify and delete type of user
-5. See their message
+4. Create, modify and delete type of expert
+5. See messages sent to you from contact page
 
 # Acknowledgements
 
