@@ -35,11 +35,10 @@ This is an example of how you may give instructions on setting up your project l
 2. Run ```composer install```
 3. Connect the database in the env.local
 4. Run ```php bin/console d:d:c```
-5. Run ```php bin/console make:migration```
-6. Run ```bin/console doctrine:migrations:migrate```
-7. Run ```yarn install```
-8. Run ```yarn encore dev``` to build assets
-9. You can load fixtures if needed by running ```php bin/console doctrine:fixtures:load```
+5. Run ```bin/console doctrine:migrations:migrate```
+6. Run ```yarn install```
+7. Run ```yarn encore dev``` to build assets
+8. You can load fixtures if needed by running ```php bin/console doctrine:fixtures:load```
 
 # Usage
 
