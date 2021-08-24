@@ -3,6 +3,7 @@ default:
         default:
             contexts:
                 - App\Tests\Behat\SlugifyServiceContext
+                - App\Tests\Behat\ContactRepositoryContext
 
     extensions:
         FriendsOfBehat\SymfonyExtension:
