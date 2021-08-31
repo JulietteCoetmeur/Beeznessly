@@ -32,8 +32,10 @@
         <td class="d-none d-sm-block">{{contact.subject}} </td>
         <td>{{contact.createdAt|date('d M Y')}} </td>
         <td><a href="{{ path('expert_messagerie_show', {'id': contact.id}) }}"><button class="btn btn-inscription"><i
-                class="fal fa-eye"></i></button></a></td>
-      </tr>
+                class="fal fa-eye"></i></button></a>
+          {{ include('expert/message/message_delete_form.html.twig') }}
+        </td>
+        </tr>
       {% endfor %}
     </tbody>
   </table>

@@ -111,6 +111,20 @@ class ExpertController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/messagerie/{id}", name="messagerie_delete", methods={"DELETE"})
+     */
+    public function deleteMessage(Request $request, Contact $contact): Response
+    {
+        if ($this->isCsrfTokenValid('delete' . $contact->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($contact);
+            $entityManager->flush();
+        }
+
+        return $this->redirectToRoute('expert_messagerie');
+    }
+
       /**
      * @Route("/ebook", methods={"GET"}, name="ebook")
      */
