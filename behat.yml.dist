@@ -1,0 +1,12 @@
+default:
+    suites:
+        default:
+            contexts:
+                - App\Tests\Behat\SlugifyServiceContext
+                - App\Tests\Behat\ContactRepositoryContext
+
+    extensions:
+        FriendsOfBehat\SymfonyExtension:
+            bootstrap: tests/bootstrap.php
+            kernel:
+                environment: dev
