@@ -92,7 +92,7 @@ Voir le profil de
                         <div class="container-fluid wrapperExpertDescri">
                             <div class="pictureExpert ">
                                 {% if user.profilePicture is empty %}
-                                <img id='profil' src="https://i.postimg.cc/DwVVmnNH/clem-onojeghuo-w0-SREKRMh-Dk-unsplash.jpg"
+                                <img id='profil' src="https://i.postimg.cc/D0gWbdTV/svyatoslav-romanov-Br-EAp01-m5w-unsplash.jpg"
                                     alt="photo de profil">
                                 {% else %}
                                 <img id='profil' src="/uploads/profile_picture/{{ user.profilePicture }}"
@@ -119,7 +119,9 @@ Voir le profil de
                         <hr class="hr-expert">
                     </div>
                     {% for ebook in user.ebooks %}
-                    {% include 'home/expert_ebook_table.html.twig'%}
+                        {% if ebook.isValidated %}
+                            {% include 'home/expert_ebook_table.html.twig'%}
+                        {% endif %}
                     {% endfor %}
                 </section>
                 {% endif %}
