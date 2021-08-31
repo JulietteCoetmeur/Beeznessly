@@ -204,7 +204,7 @@ class ExpertController extends AbstractController
     /**
      * @Route("/edit/{id}", name="edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, User $user): Response
+    public function edit(Request $request, User $user, SlugifyService $slugifyService): Response
     {
         $user = $this->getUser();
         if ($user->getIsValidated() == false) {
@@ -217,6 +217,13 @@ class ExpertController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            if (!empty($user->getCompanyName())) {
+                $slug = $slugifyService->generate($user->getCompanyName());
+                $user->setSlug($slug);
+            } else {
+                $slug = $slugifyService->generate($user->getLastname());
+                $user->setSlug($slug);
+            }
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
@@ -261,13 +268,15 @@ class ExpertController extends AbstractController
     /**
      * @Route("/ebook/{id}/edit", name="ebook_edit", methods={"GET","POST"})
      */
-    public function editEbook(Request $request, Ebook $ebook): Response
+    public function editEbook(Request $request, Ebook $ebook, SlugifyService $slugifyService): Response
     {
         $form = $this->createForm(EbookType::class, $ebook);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $ebook->setIsValidated(false);
+            $slug = $slugifyService->generate($ebook->getTitle());
+            $ebook->setSlug($slug);
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('expert_ebook');
